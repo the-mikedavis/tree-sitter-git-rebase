@@ -1,5 +1,5 @@
 // helper constants
-const WHITE_SPACE = choice(" ", "\t", "\v", "\f");
+const WHITE_SPACE = repeat1(choice(" ", "\t", "\f", "\v"));
 const NEWLINE = /\r?\n/;
 const ANYTHING = /.*/;
 
@@ -30,8 +30,8 @@ module.exports = grammar({
     _line: ($) =>
       choice(
         seq($.operation, NEWLINE),
-        seq(optional(repeat(WHITE_SPACE)), NEWLINE),
-        seq(optional(repeat(WHITE_SPACE)), $.comment, NEWLINE)
+        seq(optional(WHITE_SPACE), NEWLINE),
+        seq(optional(WHITE_SPACE), $.comment, NEWLINE)
       ),
 
     operation: ($) =>
@@ -70,7 +70,13 @@ module.exports = grammar({
         optional(seq(WHITE_SPACE, $.message))
       ),
 
-    _label_operation: ($) => seq(choice(LABEL, RESET), WHITE_SPACE, $.label),
+    _label_operation: ($) =>
+      seq(
+        choice(LABEL, RESET),
+        WHITE_SPACE,
+        $.label,
+        optional(seq(WHITE_SPACE, $.comment))
+      ),
 
     _exec: ($) => seq(EXEC, WHITE_SPACE, $.command),
 
@@ -79,7 +85,7 @@ module.exports = grammar({
     // maybe this should be /-[a-zA-Z]/?
     option: ($) => choice("-c", "-C"),
 
-    label: ($) => /[^\s]+/,
+    label: ($) => /\S+/,
 
     commit: ($) => /[a-f0-9]{7,40}/,
 
