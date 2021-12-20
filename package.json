@@ -1,0 +1,34 @@
+{
+  "name": "tree-sitter-git-rebase-todo",
+  "version": "0.0.1",
+  "description": "Tree-sitter grammar for git's interactive rebase TODO file",
+  "main": "index.js",
+  "scripts": {
+    "test": "tree-sitter test",
+    "format": "prettier --trailing-comma es5 --write grammar.js",
+    "format-check": "prettier --trailing-comma es5 --check grammar.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-mikedavis/tree-sitter-git-rebase-todo.git"
+  },
+  "keywords": [
+    "parser",
+    "lexer",
+    "git",
+    "rebase",
+    "tree-sitter"
+  ],
+  "author": "the-mikedavis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-mikedavis/tree-sitter-git-rebase-todo/issues"
+  },
+  "homepage": "https://github.com/the-mikedavis/tree-sitter-git-rebase-todo#readme",
+  "dependencies": {
+    "nan": "^2.15.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.1"
+  }
+}
