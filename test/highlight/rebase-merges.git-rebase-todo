@@ -1,0 +1,65 @@
+label onto
+
+# Branch maco-add-elixir
+reset onto
+pick 65746afe playground: Make query error underlines render in safari
+pick 9f535f95 Always include playground.html in the CLI binary
+pick 8de8c64c Remove unnecessary types from binding.rs
+pick 25f64e1e Place tighter limits on the work done during query analysis
+pick b9b77f43 tags: Remove unused field
+label branch-point
+pick 4238c6c7 add link to in-development Elixir parser
+label maco-add-elixir
+
+# Branch oxisto-patch-1
+reset branch-point # tags: Remove unused field
+pick 0a1dbdd3 Added bindings for Java and Kotlin to `index.md`
+label oxisto-patch-1
+
+# Branch rski-master
+reset branch-point # tags: Remove unused field
+merge -C f8583f50 maco-add-elixir # Merge pull request #1534 from maco/add_elixir
+merge -C 2032133f oxisto-patch-1 # Merge pull request #1532 from oxisto/patch-1
+pick 836d753c Fix include_bytes error when building cli outside of source tree
+label branch-point-2
+pick 4784ecaf fix crash on empty sexp in test, ()
+label rski-master
+
+# Branch tree-sitter-tag-modules
+reset branch-point-2 # Fix include_bytes error when building cli outside of source tree
+merge -C 8bbf75a0 rski-master # Merge pull request #1538 from rski/master
+label branch-point-3
+pick f5d1c0b8 Support @module as a highlight key.
+label tree-sitter-tag-modules
+
+reset branch-point-3 # Merge pull request #1538 from rski/master
+merge -C 7bac34c9 tree-sitter-tag-modules # Merge pull request #1539 from tree-sitter/tag-modules
+
+# Rebase 224e79ca..7bac34c9 onto 224e79ca (27 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified); use -c <commit> to reword the commit message
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+
