@@ -1,5 +1,5 @@
 {
-  "name": "tree-sitter-git-rebase-todo",
+  "name": "tree-sitter-gitrebasetodo",
   "version": "0.0.1",
   "description": "Tree-sitter grammar for git's interactive rebase TODO file",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/the-mikedavis/tree-sitter-git-rebase-todo.git"
+    "url": "git+https://github.com/the-mikedavis/tree-sitter-gitrebasetodo.git"
   },
   "keywords": [
     "parser",
@@ -22,9 +22,9 @@
   "author": "the-mikedavis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/the-mikedavis/tree-sitter-git-rebase-todo/issues"
+    "url": "https://github.com/the-mikedavis/tree-sitter-gitrebasetodo/issues"
   },
-  "homepage": "https://github.com/the-mikedavis/tree-sitter-git-rebase-todo#readme",
+  "homepage": "https://github.com/the-mikedavis/tree-sitter-gitrebasetodo#readme",
   "dependencies": {
     "nan": "^2.15.0"
   },
