@@ -30,5 +30,10 @@
   },
   "devDependencies": {
     "tree-sitter-cli": "^0.20.1"
-  }
+  },
+  "tree-sitter": [
+    {
+      "file-types": ["git-rebase-todo"]
+    }
+  ]
 }
