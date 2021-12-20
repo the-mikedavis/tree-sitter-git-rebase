@@ -4,4 +4,4 @@ A [tree-sitter](https://tree-sitter.github.io/tree-sitter/) grammar for git's in
 
 > Status: working, but still needs more testing
 
-[![highligh example](assets/highlight-rebase-merges.png)](assets/highlight-rebase-merges.png)
+<img src="assets/highlight-rebase-merges.png" width="300"/>
