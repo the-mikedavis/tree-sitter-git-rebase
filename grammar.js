@@ -36,12 +36,21 @@ module.exports = grammar({
 
     operation: ($) =>
       choice(
-        // $._merge,
+        $._merge,
         $._fixup,
         $._commit_operation_without_option,
         $._label_operation,
         $._exec,
         $._break
+      ),
+
+    _merge: ($) =>
+      seq(
+        MERGE,
+        WHITE_SPACE,
+        optional(seq($.option, WHITE_SPACE, $.commit, WHITE_SPACE)),
+        $.label,
+        optional(seq(WHITE_SPACE, "#", WHITE_SPACE, $.message))
       ),
 
     _fixup: ($) =>
