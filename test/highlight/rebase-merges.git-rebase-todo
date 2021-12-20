@@ -1,41 +1,128 @@
 label onto
+# <- function
+#      ^ constant
 
 # Branch maco-add-elixir
+#  ^ comment
 reset onto
+# <- function
+#      ^ constant
 pick 65746afe playground: Make query error underlines render in safari
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 pick 9f535f95 Always include playground.html in the CLI binary
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 pick 8de8c64c Remove unnecessary types from binding.rs
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 pick 25f64e1e Place tighter limits on the work done during query analysis
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 pick b9b77f43 tags: Remove unused field
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 label branch-point
+# <- function
+#      ^ constant
 pick 4238c6c7 add link to in-development Elixir parser
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 label maco-add-elixir
+# <- function
+#      ^ constant
 
 # Branch oxisto-patch-1
+#  ^ comment
 reset branch-point # tags: Remove unused field
+# <- function
+#      ^ constant
+#                       ^ comment
 pick 0a1dbdd3 Added bindings for Java and Kotlin to `index.md`
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 label oxisto-patch-1
+# <- function
+#      ^ constant
 
 # Branch rski-master
+#  ^ comment
 reset branch-point # tags: Remove unused field
+# <- function
+#      ^ constant
+#                       ^ comment
 merge -C f8583f50 maco-add-elixir # Merge pull request #1534 from maco/add_elixir
+# <- function.builtin
+#      ^ operator
+#         ^ constant.builtin
+#                  ^ constant
+#                                     ^ string
 merge -C 2032133f oxisto-patch-1 # Merge pull request #1532 from oxisto/patch-1
+# <- function.builtin
+#      ^ operator
+#         ^ constant.builtin
+#                  ^ constant
+#                                    ^ string
 pick 836d753c Fix include_bytes error when building cli outside of source tree
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 label branch-point-2
+# <- function
+#      ^ constant
 pick 4784ecaf fix crash on empty sexp in test, ()
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 label rski-master
+# <- function
+#      ^ constant
 
 # Branch tree-sitter-tag-modules
+#  ^ comment
 reset branch-point-2 # Fix include_bytes error when building cli outside of source tree
+# <- function
+#      ^ constant
+#                       ^ comment
 merge -C 8bbf75a0 rski-master # Merge pull request #1538 from rski/master
+# <- function.builtin
+#      ^ operator
+#         ^ constant.builtin
+#                  ^ constant
+#                             ^ punctuation.delimiter
+#                                ^ string
 label branch-point-3
+# <- function
+#      ^ constant
 pick f5d1c0b8 Support @module as a highlight key.
+# <- function.builtin
+#     ^ constant.builtin
+#              ^ string
 label tree-sitter-tag-modules
+# <- function
+#      ^ constant
 
 reset branch-point-3 # Merge pull request #1538 from rski/master
+# <- function
+#      ^ constant
+#                       ^ comment
 merge -C 7bac34c9 tree-sitter-tag-modules # Merge pull request #1539 from tree-sitter/tag-modules
+# <- function.builtin
+#      ^ operator
+#         ^ constant.builtin
+#                  ^ constant
+#                                         ^ punctuation.delimiter
+#                                           ^ string
 
 # Rebase 224e79ca..7bac34c9 onto 224e79ca (27 commands)
+# <- comment
 #
 # Commands:
 # p, pick <commit> = use commit

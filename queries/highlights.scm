@@ -10,6 +10,6 @@
 
 (commit) @constant.builtin
 
-"#" @punctation.delimiter
+"#" @punctuation.delimiter
 
 (comment) @comment
