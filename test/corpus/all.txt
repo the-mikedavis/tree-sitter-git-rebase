@@ -1,0 +1,10 @@
+=======================================
+Picks
+=======================================
+
+pick 6017bf5 clean up sway config, add wofi-emoji
+
+---
+
+(source
+  (operation (commit) (comment)))
