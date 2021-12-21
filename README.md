@@ -10,4 +10,6 @@ It's working! But needs more testing.
 
 ### Example
 
+With the [Helix](https://github.com/helix-editor/helix) editor:
+
 <img src="assets/highlight-rebase-merges.png" width="600"/>
