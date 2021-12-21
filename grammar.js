@@ -47,13 +47,18 @@ module.exports = grammar({
       ),
 
     _fixup: ($) =>
-      seq(FIXUP, optional($.option), $.commit, optional($.message)),
+      seq(
+        FIXUP,
+        optional($.option),
+        $.commit,
+        optional(alias($.message, $.comment))
+      ),
 
     _commit_operation_without_option: ($) =>
       seq(
         choice(PICK, REWORD, EDIT, SQUASH, DROP),
         $.commit,
-        optional($.message)
+        optional(alias($.message, $.comment))
       ),
 
     _label_operation: ($) =>

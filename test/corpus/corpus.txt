@@ -16,15 +16,15 @@ d a8f8aa0
 ---
 
 (source
-  (operation (commit) (message))
+  (operation (commit) (comment))
   (operation (commit))
-  (operation (commit) (message))
+  (operation (commit) (comment))
   (operation (commit))
-  (operation (commit) (message))
+  (operation (commit) (comment))
   (operation (commit))
-  (operation (commit) (message))
+  (operation (commit) (comment))
   (operation (commit))
-  (operation (commit) (message))
+  (operation (commit) (comment))
   (operation (commit)))
 
 =======================================
@@ -41,9 +41,9 @@ f -c 6017bf5
 ---
 
 (source
-  (operation (commit) (message))
-  (operation (option) (commit) (message))
-  (operation (option) (commit) (message))
+  (operation (commit) (comment))
+  (operation (option) (commit) (comment))
+  (operation (option) (commit) (comment))
   (operation (commit))
   (operation (option) (commit))
   (operation (option) (commit)))
@@ -141,11 +141,11 @@ merge -C 3fb04ec some-other-branch # Merge pull request #123 from some-other-bra
   (operation (label))
   (comment)
   (operation (label))
-  (operation (commit) (message))
+  (operation (commit) (comment))
   (operation (label))
   (comment)
   (operation (label) (comment))
-  (operation (commit) (message))
+  (operation (commit) (comment))
   (operation (label))
   (operation (label) (comment))
   (operation (option) (commit) (label) (message)))

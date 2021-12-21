@@ -185,8 +185,13 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "message"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "message"
+              },
+              "named": true,
+              "value": "comment"
             },
             {
               "type": "BLANK"
@@ -296,8 +301,13 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "message"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "message"
+              },
+              "named": true,
+              "value": "comment"
             },
             {
               "type": "BLANK"

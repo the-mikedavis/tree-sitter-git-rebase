@@ -10,30 +10,30 @@ reset onto
 pick 65746afe playground: Make query error underlines render in safari
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 pick 9f535f95 Always include playground.html in the CLI binary
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 pick 8de8c64c Remove unnecessary types from binding.rs
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 pick 25f64e1e Place tighter limits on the work done during query analysis
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 pick b9b77f43 tags: Remove unused field
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 label branch-point
 # <- function
 #      ^ constant
 pick 4238c6c7 add link to in-development Elixir parser
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 label maco-add-elixir
 # <- function
 #      ^ constant
@@ -47,7 +47,7 @@ reset branch-point # tags: Remove unused field
 pick 0a1dbdd3 Added bindings for Java and Kotlin to `index.md`
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 label oxisto-patch-1
 # <- function
 #      ^ constant
@@ -73,14 +73,14 @@ merge -C 2032133f oxisto-patch-1 # Merge pull request #1532 from oxisto/patch-1
 pick 836d753c Fix include_bytes error when building cli outside of source tree
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 label branch-point-2
 # <- function
 #      ^ constant
 pick 4784ecaf fix crash on empty sexp in test, ()
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 label rski-master
 # <- function
 #      ^ constant
@@ -104,7 +104,7 @@ label branch-point-3
 pick f5d1c0b8 Support @module as a highlight key.
 # <- function.builtin
 #     ^ constant.builtin
-#              ^ string
+#              ^ comment
 label tree-sitter-tag-modules
 # <- function
 #      ^ constant

@@ -5,6 +5,11 @@
     "fields": {}
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "message",
     "named": true,
     "fields": {}
@@ -182,10 +187,6 @@
   {
     "type": "break",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true
   },
   {
     "type": "commit",
