@@ -18,7 +18,7 @@ const MERGE = field("operator", choice("merge", "m"));
 
 module.exports = grammar({
   // hyphens are not allowed in grammar names
-  name: "gitrebasetodo",
+  name: "rebase",
 
   // this grammar is very rigid about whitespace, so I'm taking
   // full control of whitespace

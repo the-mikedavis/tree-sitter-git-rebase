@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_gitrebasetodo_binding",
+      "target_name": "tree_sitter_rebase_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "src"

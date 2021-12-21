@@ -1,5 +1,5 @@
 {
-  "name": "gitrebasetodo",
+  "name": "rebase",
   "rules": {
     "source": {
       "type": "REPEAT",
