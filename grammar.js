@@ -27,11 +27,7 @@ module.exports = grammar({
     source: ($) => repeat($._line),
 
     _line: ($) =>
-      choice(
-        seq($.operation, NEWLINE),
-        seq($.comment, NEWLINE),
-        seq(NEWLINE),
-      ),
+      choice(seq($.operation, NEWLINE), seq($.comment, NEWLINE), seq(NEWLINE)),
 
     operation: ($) =>
       choice(
@@ -52,12 +48,7 @@ module.exports = grammar({
       ),
 
     _fixup: ($) =>
-      seq(
-        FIXUP,
-        optional($.option),
-        $.commit,
-        optional($.message)
-      ),
+      seq(FIXUP, optional($.option), $.commit, optional($.message)),
 
     _commit_operation_without_option: ($) =>
       seq(
@@ -67,11 +58,7 @@ module.exports = grammar({
       ),
 
     _label_operation: ($) =>
-      seq(
-        choice(LABEL, RESET),
-        $.label,
-        optional($.comment)
-      ),
+      seq(choice(LABEL, RESET), $.label, optional($.comment)),
 
     _exec: ($) => seq(EXEC, $.command),
 
