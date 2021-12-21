@@ -56,6 +56,36 @@
         <div id="input-pane">
           <div id="code-container">
             <textarea id="code-input" style="display: none">
+</textarea
+            >
+            <div class="CodeMirror cm-s-default">
+              <div
+                style="
+                  overflow: hidden;
+                  position: relative;
+                  width: 3px;
+                  height: 0px;
+                  top: 4px;
+                  left: 34px;
+                "
+              >
+                <textarea
+                  style="
+                    position: absolute;
+                    bottom: -1em;
+                    padding: 0px;
+                    width: 1px;
+                    height: 1em;
+                    outline: currentcolor none medium;
+                    --darkreader-inline-outline: currentcolor;
+                  "
+                  autocorrect="false"
+                  autocapitalize="false"
+                  spellcheck="false"
+                  tabindex="0"
+                  data-darkreader-inline-outline=""
+                  wrap="off"
+                >
 label onto
 
 # Branch maco-add-elixir
@@ -121,36 +151,7 @@ merge -C 7bac34c9 tree-sitter-tag-modules # Merge pull request #1539 from tree-s
 # However, if you remove everything, the rebase will be aborted.
 #
 
-</textarea
-            >
-            <div class="CodeMirror cm-s-default">
-              <div
-                style="
-                  overflow: hidden;
-                  position: relative;
-                  width: 3px;
-                  height: 0px;
-                  top: 4px;
-                  left: 34px;
-                "
-              >
-                <textarea
-                  style="
-                    position: absolute;
-                    bottom: -1em;
-                    padding: 0px;
-                    width: 1px;
-                    height: 1em;
-                    outline: currentcolor none medium;
-                    --darkreader-inline-outline: currentcolor;
-                  "
-                  autocorrect="false"
-                  autocapitalize="false"
-                  spellcheck="false"
-                  tabindex="0"
-                  data-darkreader-inline-outline=""
-                  wrap="off"
-                >
+
                 </textarea>
               </div>
               <div
@@ -1367,23 +1368,7 @@ merge -C 7bac34c9 tree-sitter-tag-modules # Merge pull request #1539 from tree-s
 
           <div id="query-container" style="">
             <textarea id="query-input" style="display: none">
-(operation 
-operator: ["p" "pick" "r" "reword" "e" "edit" "s" "squash" "m" "merge" 
-"d" "drop" "b" "break" "x" "exec"] @function.builtin)
-(operation operator: ["l" "label" "t" "reset"] @function)
-(operation operator: ["f" "fixup"] @attribute)
-
-(option) @operator
-
-(message) @string
-
-(label) @constant
-
-(commit) @constant.builtin
-
-(comment) @comment
-
-"#" @punctuation.delimiter</textarea
+</textarea
             >
             <div class="CodeMirror cm-s-default">
               <div
@@ -1412,6 +1397,21 @@ operator: ["p" "pick" "r" "reword" "e" "edit" "s" "squash" "m" "merge"
                   data-darkreader-inline-outline=""
                   wrap="off"
                 ></textarea>
+(operation  operator: ["p" "pick" "r" "reword" "e" "edit" "s" "squash" "m" "merge"  "d" "drop" "b" "break" "x" "exec"] @function.builtin)
+(operation operator: ["l" "label" "t" "reset"] @function)
+(operation operator: ["f" "fixup"] @attribute)
+
+(option) @operator
+
+(message) @string
+
+(label) @constant
+
+(commit) @constant.builtin
+
+(comment) @comment
+
+"#" @punctuation.delimiter
               </div>
               <div
                 class="CodeMirror-vscrollbar"
