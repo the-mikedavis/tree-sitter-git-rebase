@@ -1,7 +1,9 @@
-// helper constants
-const WHITE_SPACE = repeat1(choice(" ", "\t", "\f", "\v"));
 const NEWLINE = /\r?\n/;
-const ANYTHING = /.*/;
+// anything but newline
+const ANYTHING = /[^\n]+/;
+// note: this white-space pattern does not include the newline.
+// newline is syntactically important in this grammar
+const WHITE_SPACE = /[\t\f\v ]+/;
 
 // operators
 const PICK = field("operator", choice("pick", "p"));
@@ -17,12 +19,9 @@ const RESET = field("operator", choice("reset", "t"));
 const MERGE = field("operator", choice("merge", "m"));
 
 module.exports = grammar({
-  // hyphens are not allowed in grammar names
   name: "rebase",
 
-  // this grammar is very rigid about whitespace, so I'm taking
-  // full control of whitespace
-  extras: ($) => [],
+  extras: ($) => [WHITE_SPACE],
 
   rules: {
     source: ($) => repeat($._line),
@@ -30,8 +29,8 @@ module.exports = grammar({
     _line: ($) =>
       choice(
         seq($.operation, NEWLINE),
-        seq(optional(WHITE_SPACE), NEWLINE),
-        seq(optional(WHITE_SPACE), $.comment, NEWLINE)
+        seq($.comment, NEWLINE),
+        seq(NEWLINE),
       ),
 
     operation: ($) =>
@@ -47,38 +46,34 @@ module.exports = grammar({
     _merge: ($) =>
       seq(
         MERGE,
-        WHITE_SPACE,
-        optional(seq($.option, WHITE_SPACE, $.commit, WHITE_SPACE)),
+        optional(seq($.option, $.commit)),
         $.label,
-        optional(seq(WHITE_SPACE, "#", WHITE_SPACE, $.message))
+        optional(seq("#", $.message))
       ),
 
     _fixup: ($) =>
       seq(
         FIXUP,
-        WHITE_SPACE,
-        optional(seq($.option, WHITE_SPACE)),
+        optional($.option),
         $.commit,
-        optional(seq(WHITE_SPACE, $.message))
+        optional($.message)
       ),
 
     _commit_operation_without_option: ($) =>
       seq(
         choice(PICK, REWORD, EDIT, SQUASH, DROP),
-        WHITE_SPACE,
         $.commit,
-        optional(seq(WHITE_SPACE, $.message))
+        optional($.message)
       ),
 
     _label_operation: ($) =>
       seq(
         choice(LABEL, RESET),
-        WHITE_SPACE,
         $.label,
-        optional(seq(WHITE_SPACE, $.comment))
+        optional($.comment)
       ),
 
-    _exec: ($) => seq(EXEC, WHITE_SPACE, $.command),
+    _exec: ($) => seq(EXEC, $.command),
 
     _break: ($) => BREAK,
 

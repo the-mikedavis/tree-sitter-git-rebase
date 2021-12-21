@@ -28,36 +28,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "comment"
             },
             {
               "type": "PATTERN",
@@ -68,42 +40,6 @@
         {
           "type": "SEQ",
           "members": [
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            },
-            {
-              "type": "SYMBOL",
-              "name": "comment"
-            },
             {
               "type": "PATTERN",
               "value": "\\r?\\n"
@@ -162,30 +98,6 @@
           }
         },
         {
-          "type": "REPEAT1",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": " "
-              },
-              {
-                "type": "STRING",
-                "value": "\t"
-              },
-              {
-                "type": "STRING",
-                "value": "\f"
-              },
-              {
-                "type": "STRING",
-                "value": "\u000b"
-              }
-            ]
-          }
-        },
-        {
           "type": "CHOICE",
           "members": [
             {
@@ -196,56 +108,8 @@
                   "name": "option"
                 },
                 {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                },
-                {
                   "type": "SYMBOL",
                   "name": "commit"
-                },
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
                 }
               ]
             },
@@ -265,56 +129,8 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                },
-                {
                   "type": "STRING",
                   "value": "#"
-                },
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
                 },
                 {
                   "type": "SYMBOL",
@@ -350,64 +166,11 @@
           }
         },
         {
-          "type": "REPEAT1",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": " "
-              },
-              {
-                "type": "STRING",
-                "value": "\t"
-              },
-              {
-                "type": "STRING",
-                "value": "\f"
-              },
-              {
-                "type": "STRING",
-                "value": "\u000b"
-              }
-            ]
-          }
-        },
-        {
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "option"
-                },
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "option"
             },
             {
               "type": "BLANK"
@@ -422,37 +185,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "message"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "message"
             },
             {
               "type": "BLANK"
@@ -555,30 +289,6 @@
           ]
         },
         {
-          "type": "REPEAT1",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": " "
-              },
-              {
-                "type": "STRING",
-                "value": "\t"
-              },
-              {
-                "type": "STRING",
-                "value": "\f"
-              },
-              {
-                "type": "STRING",
-                "value": "\u000b"
-              }
-            ]
-          }
-        },
-        {
           "type": "SYMBOL",
           "name": "commit"
         },
@@ -586,37 +296,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "message"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "message"
             },
             {
               "type": "BLANK"
@@ -668,30 +349,6 @@
           ]
         },
         {
-          "type": "REPEAT1",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": " "
-              },
-              {
-                "type": "STRING",
-                "value": "\t"
-              },
-              {
-                "type": "STRING",
-                "value": "\f"
-              },
-              {
-                "type": "STRING",
-                "value": "\u000b"
-              }
-            ]
-          }
-        },
-        {
           "type": "SYMBOL",
           "name": "label"
         },
@@ -699,37 +356,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": " "
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\t"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\f"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "\u000b"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "comment"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "comment"
             },
             {
               "type": "BLANK"
@@ -754,30 +382,6 @@
               {
                 "type": "STRING",
                 "value": "x"
-              }
-            ]
-          }
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": " "
-              },
-              {
-                "type": "STRING",
-                "value": "\t"
-              },
-              {
-                "type": "STRING",
-                "value": "\f"
-              },
-              {
-                "type": "STRING",
-                "value": "\u000b"
               }
             ]
           }
@@ -828,11 +432,11 @@
     },
     "message": {
       "type": "PATTERN",
-      "value": ".*"
+      "value": "[^\\n]+"
     },
     "command": {
       "type": "PATTERN",
-      "value": ".*"
+      "value": "[^\\n]+"
     },
     "comment": {
       "type": "TOKEN",
@@ -845,13 +449,18 @@
           },
           {
             "type": "PATTERN",
-            "value": ".*"
+            "value": "[^\\n]+"
           }
         ]
       }
     }
   },
-  "extras": [],
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "[\\t\\f\\v ]+"
+    }
+  ],
   "conflicts": [],
   "precedences": [],
   "externals": [],
