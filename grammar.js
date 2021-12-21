@@ -1,8 +1,7 @@
 const NEWLINE = /\r?\n/;
 // anything but newline
 const ANYTHING = /[^\n]+/;
-// note: this white-space pattern does not include the newline.
-// newline is syntactically important in this grammar
+// white-space token(s) but not the newline character
 const WHITE_SPACE = /[\t\f\v ]+/;
 
 // operators
@@ -75,6 +74,6 @@ module.exports = grammar({
 
     command: ($) => ANYTHING,
 
-    comment: ($) => token(seq("#", ANYTHING)),
+    comment: ($) => token(seq("#", optional(ANYTHING))),
   },
 });

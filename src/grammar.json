@@ -448,8 +448,16 @@
             "value": "#"
           },
           {
-            "type": "PATTERN",
-            "value": "[^\\n]+"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^\\n]+"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         ]
       }
