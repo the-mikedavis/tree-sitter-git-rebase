@@ -1,4 +1,4 @@
-# `tree-sitter-git-git-rebase`
+# `tree-sitter-git-rebase`
 
 [![CI](https://github.com/the-mikedavis/tree-sitter-git-rebase/actions/workflows/ci.yml/badge.svg)](https://github.com/the-mikedavis/tree-sitter-git-rebase/actions/workflows/ci.yml)
 
