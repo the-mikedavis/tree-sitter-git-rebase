@@ -18,7 +18,7 @@ const RESET = field("operator", choice("reset", "t"));
 const MERGE = field("operator", choice("merge", "m"));
 
 module.exports = grammar({
-  name: "rebase",
+  name: "git_rebase",
 
   extras: ($) => [WHITE_SPACE],
 

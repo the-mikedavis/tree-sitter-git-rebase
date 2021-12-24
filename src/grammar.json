@@ -1,5 +1,5 @@
 {
-  "name": "rebase",
+  "name": "git_rebase",
   "rules": {
     "source": {
       "type": "REPEAT",
