@@ -31,10 +31,12 @@ jobs:
         run: npm ci
 
       - name: Generate parser files
-        run: npx tree-sitter generate
+        run: |
+          npx tree-sitter generate
+          npx tree-sitter build-wasm
 
       - name: Commit generated parser files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Generate parser
-          file_pattern: src
+          file_pattern: src *.wasm
