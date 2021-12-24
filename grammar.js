@@ -22,11 +22,20 @@ module.exports = grammar({
 
   extras: ($) => [WHITE_SPACE],
 
-  rules: {
-    source: ($) => repeat($._line),
+  inline: ($) => [$._line],
 
-    _line: ($) =>
-      choice(seq($.operation, NEWLINE), seq($.comment, NEWLINE), seq(NEWLINE)),
+  rules: {
+    source: ($) =>
+      seq(
+        repeat(NEWLINE),
+        $._line,
+        repeat(seq($._operation_separator, optional($._line))),
+        optional(NEWLINE)
+      ),
+
+    _operation_separator: ($) => token(prec(1, NEWLINE)),
+
+    _line: ($) => choice($.operation, $.comment),
 
     operation: ($) =>
       choice(

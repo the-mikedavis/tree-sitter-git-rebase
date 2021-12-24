@@ -2,49 +2,78 @@
   "name": "git_rebase",
   "rules": {
     "source": {
-      "type": "REPEAT",
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\r?\\n"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_line"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_operation_separator"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_line"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\r?\\n"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_operation_separator": {
+      "type": "TOKEN",
       "content": {
-        "type": "SYMBOL",
-        "name": "_line"
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "\\r?\\n"
+        }
       }
     },
     "_line": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "operation"
-            },
-            {
-              "type": "PATTERN",
-              "value": "\\r?\\n"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "operation"
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "comment"
-            },
-            {
-              "type": "PATTERN",
-              "value": "\\r?\\n"
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "\\r?\\n"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -482,7 +511,9 @@
   "conflicts": [],
   "precedences": [],
   "externals": [],
-  "inline": [],
+  "inline": [
+    "_line"
+  ],
   "supertypes": []
 }
 
