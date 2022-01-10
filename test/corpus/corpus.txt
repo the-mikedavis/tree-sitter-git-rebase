@@ -239,3 +239,11 @@ Single-line comment with no newline ending
 --------------------------------------------------------------------------------
 
 (source (comment))
+
+================================================================================
+Single-line operation with preceeding space
+================================================================================
+   pick 51ff58f add gitcommit grammar and language configuration
+--------------------------------------------------------------------------------
+
+(source (operation (commit) (comment)))
