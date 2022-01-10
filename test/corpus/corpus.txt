@@ -222,7 +222,10 @@ pick 6017bf5 clean up sway config, add wofi-emoji
 
 --------------------------------------------------------------------------------
 
-(source (operation (commit) (comment)))
+(source
+  (operation
+    (commit)
+    (comment)))
 
 ================================================================================
 Single-line operation with no newline ending
@@ -230,7 +233,10 @@ Single-line operation with no newline ending
 pick 6017bf5 clean up sway config, add wofi-emoji
 --------------------------------------------------------------------------------
 
-(source (operation (commit) (comment)))
+(source
+  (operation
+    (commit)
+    (comment)))
 
 ================================================================================
 Single-line comment with no newline ending
@@ -238,7 +244,8 @@ Single-line comment with no newline ending
 # goodbye, newline!
 --------------------------------------------------------------------------------
 
-(source (comment))
+(source
+  (comment))
 
 ================================================================================
 Single-line operation with preceeding space
@@ -246,4 +253,7 @@ Single-line operation with preceeding space
    pick 51ff58f add gitcommit grammar and language configuration
 --------------------------------------------------------------------------------
 
-(source (operation (commit) (comment)))
+(source
+  (operation
+    (commit)
+    (comment)))
