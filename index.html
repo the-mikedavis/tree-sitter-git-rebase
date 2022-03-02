@@ -1,0 +1,277 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>tree-sitter git-rebase</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://tree-sitter.github.io/tree-sitter/assets/images/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://tree-sitter.github.io/tree-sitter/assets/images/favicon-16x16.png"
+      sizes="16x16"
+    />
+  </head>
+
+  <body>
+    <div id="playground-container" style="visibility: visible">
+      <header>
+        <div class="header-item">
+          <bold>git-rebase</bold>
+        </div>
+
+        <div class="header-item">
+          <label for="logging-checkbox">log</label>
+          <input id="logging-checkbox" type="checkbox" />
+        </div>
+
+        <div class="header-item">
+          <label for="query-checkbox">query</label>
+          <input id="query-checkbox" type="checkbox" checked="checked" />
+        </div>
+
+        <div class="header-item">
+          <label for="update-time">parse time: </label>
+          <span id="update-time">19.0 ms</span>
+        </div>
+
+        <select id="language-select" style="display: none">
+          <option value="git-rebase" selected="selected">Parser</option>
+        </select>
+      </header>
+
+      <main>
+        <div id="input-pane">
+          <div id="code-container">
+            <textarea id="code-input" style="display: none">
+label onto
+
+# Branch maco-add-elixir
+reset onto
+pick 65746afe playground: Make query error underlines render in safari
+pick 9f535f95 Always include playground.html in the CLI binary
+pick 8de8c64c Remove unnecessary types from binding.rs
+pick 25f64e1e Place tighter limits on the work done during query analysis
+pick b9b77f43 tags: Remove unused field
+label branch-point
+pick 4238c6c7 add link to in-development Elixir parser
+label maco-add-elixir
+
+# Branch oxisto-patch-1
+reset branch-point # tags: Remove unused field
+pick 0a1dbdd3 Added bindings for Java and Kotlin to `index.md`
+label oxisto-patch-1
+
+# Branch rski-master
+reset branch-point # tags: Remove unused field
+merge -C f8583f50 maco-add-elixir # Merge pull request #1534 from maco/add_elixir
+merge -C 2032133f oxisto-patch-1 # Merge pull request #1532 from oxisto/patch-1
+pick 836d753c Fix include_bytes error when building cli outside of source tree
+label branch-point-2
+pick 4784ecaf fix crash on empty sexp in test, ()
+label rski-master
+
+# Branch tree-sitter-tag-modules
+reset branch-point-2 # Fix include_bytes error when building cli outside of source tree
+merge -C 8bbf75a0 rski-master # Merge pull request #1538 from rski/master
+label branch-point-3
+pick f5d1c0b8 Support @module as a highlight key.
+label tree-sitter-tag-modules
+
+reset branch-point-3 # Merge pull request #1538 from rski/master
+merge -C 7bac34c9 tree-sitter-tag-modules # Merge pull request #1539 from tree-sitter/tag-modules
+
+# Rebase 224e79ca..7bac34c9 onto 224e79ca (27 commands)
+#
+# Commands:
+# p, pick &lt;commit&gt; = use commit
+# r, reword &lt;commit&gt; = use commit, but edit the commit message
+# e, edit &lt;commit&gt; = use commit, but stop for amending
+# s, squash &lt;commit&gt; = use commit, but meld into previous commit
+# f, fixup [-C | -c] &lt;commit&gt; = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
+# x, exec &lt;command&gt; = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop &lt;commit&gt; = remove commit
+# l, label &lt;label&gt; = label current HEAD with a name
+# t, reset &lt;label&gt; = reset HEAD to a label
+# m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified); use -c &lt;commit&gt; to reword the commit message
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#</textarea>
+          </div>
+          <div id="query-container" style="">
+            <textarea id="query-input" style="display: none">
+(operation  operator: ["p" "pick" "r" "reword" "e" "edit" "s" "squash" "m" "merge"  "d" "drop" "b" "break" "x" "exec"] @function.builtin)
+(operation operator: ["l" "label" "t" "reset"] @function)
+(operation operator: ["f" "fixup"] @attribute)
+
+(option) @operator
+
+(message) @string
+
+(label) @constant
+
+(commit) @constant.builtin
+
+(comment) @comment
+
+"#" @punctuation.delimiter</textarea>
+          </div>
+        </div>
+
+        <div id="output-container-scroll">
+          <pre
+            id="output-container"
+            class="highlight"
+            tabindex="0"
+            style="counter-increment: clusterize-counter 0"
+          ></pre>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.js"></script>
+
+    <script>
+      LANGUAGE_BASE_URL = "";
+    </script>
+    <script src="tree-sitter.js"></script>
+    <script src="playground.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #playground-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        box-sizing: border-box;
+        display: flex;
+        padding: 20px;
+        height: 60px;
+        border-bottom: 1px solid #aaa;
+      }
+
+      main {
+        flex: 1;
+        position: relative;
+      }
+
+      #input-pane {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 50%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #code-container,
+      #query-container {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        border-right: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+      }
+
+      #output-container-scroll {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        right: 0;
+      }
+
+      .header-item {
+        margin-right: 30px;
+      }
+
+      #playground-container .CodeMirror {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+      }
+
+      #output-container-scroll {
+        flex: 1;
+        padding: 0;
+        overflow: auto;
+      }
+
+      #output-container {
+        padding: 0 10px;
+        margin: 0;
+      }
+
+      #logging-checkbox {
+        vertical-align: middle;
+      }
+
+      .CodeMirror div.CodeMirror-cursor {
+        border-left: 3px solid red;
+      }
+
+      a {
+        text-decoration: none;
+        color: #040404;
+        padding: 2px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a.highlighted {
+        background-color: #d9d9d9;
+        color: red;
+        border-radius: 3px;
+        text-decoration: underline;
+      }
+
+      .query-error {
+        text-decoration: underline red dashed;
+        -webkit-text-decoration: underline red dashed;
+      }
+    </style>
+  </body>
+</html>
