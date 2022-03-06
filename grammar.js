@@ -1,93 +1,61 @@
-const NEWLINE = /\r?\n/;
+const NEWLINE = /[\r?\n]+/;
 // anything but newline
-const ANYTHING = /[^\n]+/;
+const ANYTHING = /\S[^\n\r]*/;
+const ANYTHING_BUT_WHITESPACE = /\S+/;
 // white-space token(s) but not the newline character
 const WHITE_SPACE = /[\t\f\v ]+/;
-
-// operators
-const PICK = field("operator", choice("pick", "p"));
-const REWORD = field("operator", choice("reword", "r"));
-const EDIT = field("operator", choice("edit", "e"));
-const SQUASH = field("operator", choice("squash", "s"));
-const FIXUP = field("operator", choice("fixup", "f"));
-const EXEC = field("operator", choice("exec", "x"));
-const BREAK = field("operator", choice("break", "b"));
-const DROP = field("operator", choice("drop", "d"));
-const LABEL = field("operator", choice("label", "l"));
-const RESET = field("operator", choice("reset", "t"));
-const MERGE = field("operator", choice("merge", "m"));
 
 module.exports = grammar({
   name: "git_rebase",
 
-  extras: ($) => [WHITE_SPACE],
+  extras: ($) => [WHITE_SPACE, $.comment],
 
   inline: ($) => [$._line],
 
   rules: {
-    source: ($) =>
-      seq(
-        repeat(NEWLINE),
-        $._line,
-        repeat(seq($._operation_separator, optional($._line))),
-        optional(NEWLINE)
-      ),
-
-    _operation_separator: ($) => token(prec(1, NEWLINE)),
-
-    _line: ($) => choice($.operation, $.comment),
+    source: ($) => surround($.operation, NEWLINE),
 
     operation: ($) =>
       choice(
-        $._merge,
-        $._fixup,
-        $._commit_operation_without_option,
         $._label_operation,
-        $._exec,
-        $._break
+        $._exec_operation,
+        $._merge_operation,
+        $._fixup_operation,
+        $._nullary_operation
       ),
+    _nullary_operation: ($) => $.command,
 
-    _merge: ($) =>
-      seq(
-        MERGE,
-        optional(seq($.option, $.commit)),
-        $.label,
-        optional(seq("#", $.message))
-      ),
+    _label_operation: ($) => seq($.command, $.label, optional($.message)),
 
-    _fixup: ($) =>
-      seq(
-        FIXUP,
-        optional($.option),
-        $.commit,
-        optional(alias($.message, $.comment))
-      ),
+    _merge_operation: ($) =>
+      seq($.command, $.option, $.label, $.label, optional($.message)),
 
-    _commit_operation_without_option: ($) =>
-      seq(
-        choice(PICK, REWORD, EDIT, SQUASH, DROP),
-        $.commit,
-        optional(alias($.message, $.comment))
-      ),
+    _fixup_operation: ($) =>
+      seq($.command, $.option, $.label, optional($.message)),
 
-    _label_operation: ($) =>
-      seq(choice(LABEL, RESET), $.label, optional($.comment)),
-
-    _exec: ($) => seq(EXEC, $.command),
-
-    _break: ($) => BREAK,
+    _exec_operation: ($) => seq(choice("x", "exec"), $.message),
 
     // maybe this should be /-[a-zA-Z]/?
     option: ($) => choice("-c", "-C"),
 
-    label: ($) => /\S+/,
+    label: ($) => ANYTHING_BUT_WHITESPACE,
 
-    commit: ($) => /[a-f0-9]{7,40}/,
+    message: ($) => token(prec(-1, ANYTHING)),
 
-    message: ($) => ANYTHING,
+    command: ($) => /[a-z]+/,
 
-    command: ($) => ANYTHING,
-
-    comment: ($) => token(seq("#", optional(ANYTHING))),
+    comment: ($) => token(prec(-1, /#[^\r\n]*/)),
   },
 });
+
+function surround(rule, separator) {
+  return seq(
+    optional(separator),
+    optional(sep1(rule, repeat1(separator))),
+    optional(separator)
+  );
+}
+
+function sep1(rule, separator) {
+  return seq(rule, repeat(seq(separator, rule)));
+}

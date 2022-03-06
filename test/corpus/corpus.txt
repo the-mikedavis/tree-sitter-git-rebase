@@ -17,30 +17,40 @@ d a8f8aa0
 
 (source
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
-    (commit))
+    (command)
+    (label))
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
-    (commit))
+    (command)
+    (label))
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
-    (commit))
+    (command)
+    (label))
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
-    (commit))
+    (command)
+    (label))
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
-    (commit)))
+    (command)
+    (label)))
 
 ================================================================================
 Fixup
@@ -57,24 +67,32 @@ f -c 6017bf5
 
 (source
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
+    (command)
     (option)
-    (commit)
-    (comment))
+    (label)
+    (label)
+    (message))
   (operation
+    (command)
     (option)
-    (commit)
-    (comment))
+    (label)
+    (label)
+    (message))
   (operation
-    (commit))
+    (command)
+    (label))
   (operation
+    (command)
     (option)
-    (commit))
+    (label))
   (operation
+    (command)
     (option)
-    (commit)))
+    (label)))
 
 ================================================================================
 Exec
@@ -87,9 +105,9 @@ x curl http://example.com/gotcha.sh | sudo bash
 
 (source
   (operation
-    (command))
+    (message))
   (operation
-    (command)))
+    (message)))
 
 ================================================================================
 Break
@@ -101,8 +119,10 @@ b
 --------------------------------------------------------------------------------
 
 (source
-  (operation)
-  (operation))
+  (operation
+    (command))
+  (operation
+    (command)))
 
 ================================================================================
 Label, reset
@@ -120,17 +140,21 @@ label v1.0.0 wohoo!
 
 (source
   (operation
+    (command)
     (label))
   (operation
+    (command)
     (label))
   (operation
+    (command)
     (label))
   (operation
+    (command)
     (label))
   (operation
-    (label))
-  (ERROR
-    (UNEXPECTED 'w')))
+    (command)
+    (label)
+    (message)))
 
 ================================================================================
 Merges
@@ -146,22 +170,27 @@ merge -c 3fb04ec some-other-branch
 
 (source
   (operation
+    (command)
     (label)
     (message))
   (operation
+    (command)
     (label))
   (operation
+    (command)
     (option)
-    (commit)
+    (label)
     (label)
     (message))
   (operation
+    (command)
     (option)
-    (commit)
+    (label)
     (label))
   (operation
+    (command)
     (option)
-    (commit)
+    (label)
     (label)))
 
 ================================================================================
@@ -188,30 +217,39 @@ merge -C 3fb04ec some-other-branch # Merge pull request #123 from some-other-bra
 
 (source
   (operation
+    (command)
     (label))
   (comment)
   (operation
+    (command)
     (label))
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
+    (command)
     (label))
   (comment)
   (operation
+    (command)
     (label)
-    (comment))
+    (message))
   (operation
-    (commit)
-    (comment))
+    (command)
+    (label)
+    (message))
   (operation
+    (command)
     (label))
   (operation
+    (command)
     (label)
-    (comment))
+    (message))
   (operation
+    (command)
     (option)
-    (commit)
+    (label)
     (label)
     (message)))
 
@@ -224,8 +262,9 @@ pick 6017bf5 clean up sway config, add wofi-emoji
 
 (source
   (operation
-    (commit)
-    (comment)))
+    (command)
+    (label)
+    (message)))
 
 ================================================================================
 Single-line operation with no newline ending
@@ -235,8 +274,9 @@ pick 6017bf5 clean up sway config, add wofi-emoji
 
 (source
   (operation
-    (commit)
-    (comment)))
+    (command)
+    (label)
+    (message)))
 
 ================================================================================
 Single-line comment with no newline ending
@@ -255,5 +295,6 @@ Single-line operation with preceeding space
 
 (source
   (operation
-    (commit)
-    (comment)))
+    (command)
+    (label)
+    (message)))
