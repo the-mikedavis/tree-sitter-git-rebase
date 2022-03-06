@@ -1,132 +1,14 @@
 [
   {
-    "type": "command",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "message",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "operation",
     "named": true,
-    "fields": {
-      "operator": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "b",
-            "named": false
-          },
-          {
-            "type": "break",
-            "named": false
-          },
-          {
-            "type": "d",
-            "named": false
-          },
-          {
-            "type": "drop",
-            "named": false
-          },
-          {
-            "type": "e",
-            "named": false
-          },
-          {
-            "type": "edit",
-            "named": false
-          },
-          {
-            "type": "exec",
-            "named": false
-          },
-          {
-            "type": "f",
-            "named": false
-          },
-          {
-            "type": "fixup",
-            "named": false
-          },
-          {
-            "type": "l",
-            "named": false
-          },
-          {
-            "type": "label",
-            "named": false
-          },
-          {
-            "type": "m",
-            "named": false
-          },
-          {
-            "type": "merge",
-            "named": false
-          },
-          {
-            "type": "p",
-            "named": false
-          },
-          {
-            "type": "pick",
-            "named": false
-          },
-          {
-            "type": "r",
-            "named": false
-          },
-          {
-            "type": "reset",
-            "named": false
-          },
-          {
-            "type": "reword",
-            "named": false
-          },
-          {
-            "type": "s",
-            "named": false
-          },
-          {
-            "type": "squash",
-            "named": false
-          },
-          {
-            "type": "t",
-            "named": false
-          },
-          {
-            "type": "x",
-            "named": false
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "command",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "commit",
           "named": true
         },
         {
@@ -155,22 +37,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
         {
           "type": "operation",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "#",
-    "named": false
   },
   {
     "type": "-C",
@@ -181,96 +55,24 @@
     "named": false
   },
   {
-    "type": "b",
-    "named": false
-  },
-  {
-    "type": "break",
-    "named": false
-  },
-  {
-    "type": "commit",
+    "type": "command",
     "named": true
   },
   {
-    "type": "d",
-    "named": false
-  },
-  {
-    "type": "drop",
-    "named": false
-  },
-  {
-    "type": "e",
-    "named": false
-  },
-  {
-    "type": "edit",
-    "named": false
+    "type": "comment",
+    "named": true
   },
   {
     "type": "exec",
     "named": false
   },
   {
-    "type": "f",
-    "named": false
-  },
-  {
-    "type": "fixup",
-    "named": false
-  },
-  {
-    "type": "l",
-    "named": false
-  },
-  {
     "type": "label",
     "named": true
   },
   {
-    "type": "label",
-    "named": false
-  },
-  {
-    "type": "m",
-    "named": false
-  },
-  {
-    "type": "merge",
-    "named": false
-  },
-  {
-    "type": "p",
-    "named": false
-  },
-  {
-    "type": "pick",
-    "named": false
-  },
-  {
-    "type": "r",
-    "named": false
-  },
-  {
-    "type": "reset",
-    "named": false
-  },
-  {
-    "type": "reword",
-    "named": false
-  },
-  {
-    "type": "s",
-    "named": false
-  },
-  {
-    "type": "squash",
-    "named": false
-  },
-  {
-    "type": "t",
-    "named": false
+    "type": "message",
+    "named": true
   },
   {
     "type": "x",
