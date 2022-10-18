@@ -33,7 +33,8 @@ module.exports = grammar({
     _fixup_operation: ($) =>
       seq($.command, $.option, $.label, optional($.message)),
 
-    _exec_operation: ($) => seq(choice("x", "exec"), $.message),
+    _exec_operation: ($) =>
+      seq(alias(choice("x", "exec"), $.command), $.message),
 
     // maybe this should be /-[a-zA-Z]/?
     option: ($) => choice("-c", "-C"),

@@ -105,8 +105,10 @@ x curl http://example.com/gotcha.sh | sudo bash
 
 (source
   (operation
+    (command)
     (message))
   (operation
+    (command)
     (message)))
 
 ================================================================================
