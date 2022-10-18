@@ -5,7 +5,7 @@
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #endif
 
-#define LANGUAGE_VERSION 13
+#define LANGUAGE_VERSION 14
 #define STATE_COUNT 28
 #define LARGE_STATE_COUNT 4
 #define SYMBOL_COUNT 20
@@ -41,8 +41,8 @@ enum {
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [aux_sym_source_token1] = "source_token1",
-  [anon_sym_x] = "x",
-  [anon_sym_exec] = "exec",
+  [anon_sym_x] = "command",
+  [anon_sym_exec] = "command",
   [anon_sym_DASHc] = "-c",
   [anon_sym_DASHC] = "-C",
   [sym_label] = "label",
@@ -64,8 +64,8 @@ static const char * const ts_symbol_names[] = {
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [aux_sym_source_token1] = aux_sym_source_token1,
-  [anon_sym_x] = anon_sym_x,
-  [anon_sym_exec] = anon_sym_exec,
+  [anon_sym_x] = sym_command,
+  [anon_sym_exec] = sym_command,
   [anon_sym_DASHc] = anon_sym_DASHc,
   [anon_sym_DASHC] = anon_sym_DASHC,
   [sym_label] = sym_label,
@@ -95,11 +95,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [anon_sym_x] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_exec] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_DASHc] = {
     .visible = true,
@@ -173,6 +173,37 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
 
 static const uint16_t ts_non_terminal_alias_map[] = {
   0,
+};
+
+static const TSStateId ts_primary_state_ids[STATE_COUNT] = {
+  [0] = 0,
+  [1] = 1,
+  [2] = 2,
+  [3] = 3,
+  [4] = 4,
+  [5] = 5,
+  [6] = 6,
+  [7] = 7,
+  [8] = 8,
+  [9] = 9,
+  [10] = 10,
+  [11] = 11,
+  [12] = 12,
+  [13] = 13,
+  [14] = 14,
+  [15] = 15,
+  [16] = 16,
+  [17] = 17,
+  [18] = 18,
+  [19] = 19,
+  [20] = 20,
+  [21] = 21,
+  [22] = 22,
+  [23] = 23,
+  [24] = 24,
+  [25] = 25,
+  [26] = 26,
+  [27] = 27,
 };
 
 static bool ts_lex(TSLexer *lexer, TSStateId state) {
@@ -823,6 +854,7 @@ extern const TSLanguage *tree_sitter_git_rebase(void) {
     .alias_sequences = &ts_alias_sequences[0][0],
     .lex_modes = ts_lex_modes,
     .lex_fn = ts_lex,
+    .primary_state_ids = ts_primary_state_ids,
   };
   return &language;
 }

@@ -63,19 +63,11 @@
     "named": true
   },
   {
-    "type": "exec",
-    "named": false
-  },
-  {
     "type": "label",
     "named": true
   },
   {
     "type": "message",
     "named": true
-  },
-  {
-    "type": "x",
-    "named": false
   }
 ]

@@ -186,17 +186,22 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "x"
-            },
-            {
-              "type": "STRING",
-              "value": "exec"
-            }
-          ]
+          "type": "ALIAS",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "x"
+              },
+              {
+                "type": "STRING",
+                "value": "exec"
+              }
+            ]
+          },
+          "named": true,
+          "value": "command"
         },
         {
           "type": "SYMBOL",
