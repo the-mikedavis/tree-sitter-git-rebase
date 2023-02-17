@@ -4,6 +4,7 @@ const ANYTHING = /\S[^\n\r]*/;
 const ANYTHING_BUT_WHITESPACE = /\S+/;
 // white-space token(s) but not the newline character
 const WHITE_SPACE = /[\t\f\v ]+/;
+const ALPHA_HYPHEN = /[a-zA-Z-]+/;
 
 module.exports = grammar({
   name: "git_rebase",
@@ -43,7 +44,7 @@ module.exports = grammar({
 
     message: ($) => token(prec(-1, ANYTHING)),
 
-    command: ($) => /[a-z]+/,
+    command: ($) => ALPHA_HYPHEN,
 
     comment: ($) => token(prec(-1, /#[^\r\n]*/)),
   },

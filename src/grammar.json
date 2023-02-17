@@ -239,7 +239,7 @@
     },
     "command": {
       "type": "PATTERN",
-      "value": "[a-z]+"
+      "value": "[a-zA-Z-]+"
     },
     "comment": {
       "type": "TOKEN",
