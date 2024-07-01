@@ -266,9 +266,6 @@
   "conflicts": [],
   "precedences": [],
   "externals": [],
-  "inline": [
-    "ReferenceError"
-  ],
+  "inline": [],
   "supertypes": []
 }
-
