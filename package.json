@@ -57,7 +57,8 @@
     {
       "file-types": [
         "git-rebase-todo"
-      ]
+      ],
+      "highlights": "queries/highlights.scm"
     }
   ]
 }
