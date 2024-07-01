@@ -11,8 +11,6 @@ module.exports = grammar({
 
   extras: ($) => [WHITE_SPACE, $.comment],
 
-  inline: ($) => [$._line],
-
   rules: {
     source: ($) => surround($.operation, NEWLINE),
 
