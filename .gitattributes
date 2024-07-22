@@ -1,2 +1,8 @@
 /src/**/* linguist-generated=true
 /bindings/**/* linguist-generated=true
+Makefile linguist-generated=true
+pyproject.toml linguist-generated=true
+setup.py linguist-generated=true
+Package.swift linguist-generated=true
+binding.gyp linguist-generated=true
+package-lock.json linguist-generated=true
