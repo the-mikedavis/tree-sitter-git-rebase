@@ -49,10 +49,13 @@ module.exports = grammar({
 });
 
 function surround(rule, separator) {
-  return seq(
-    optional(separator),
-    optional(sep1(rule, repeat1(separator))),
-    optional(separator)
+  return choice(
+    seq(
+      repeat(separator),
+      sep1(rule, repeat1(separator)),
+      repeat(separator)
+    ),
+    repeat(separator),
   );
 }
 

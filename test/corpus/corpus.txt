@@ -315,12 +315,53 @@ Single-line comment with no newline ending
   (comment))
 
 ================================================================================
+Two Single-line comments with no newline ending
+================================================================================
+# goodbye, newline!
+# goodbye, newline!
+--------------------------------------------------------------------------------
+
+(source
+  (comment)
+  (comment))
+
+================================================================================
 Single-line operation with preceeding space
 ================================================================================
    pick 51ff58f add gitcommit grammar and language configuration
 --------------------------------------------------------------------------------
 
 (source
+  (operation
+    (command)
+    (label)
+    (message)))
+
+================================================================================
+One line of comments with following pick
+================================================================================
+# first line comment
+pick 6017bf5 # I know that i'm alone
+--------------------------------------------------------------------------------
+
+(source
+  (comment)
+  (operation
+    (command)
+    (label)
+    (message)))
+
+================================================================================
+Two lines of comments with following picks
+================================================================================
+# first line comment
+# second line comment
+pick 6017bf5 # I know that i'm naive
+--------------------------------------------------------------------------------
+
+(source
+  (comment)
+  (comment)
   (operation
     (command)
     (label)

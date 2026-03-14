@@ -1,24 +1,20 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "git_rebase",
   "rules": {
     "source": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "CHOICE",
+          "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[\\r?\\n]+"
+              "type": "REPEAT",
+              "content": {
+                "type": "PATTERN",
+                "value": "[\\r?\\n]+"
+              }
             },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
             {
               "type": "SEQ",
               "members": [
@@ -48,21 +44,20 @@
               ]
             },
             {
-              "type": "BLANK"
+              "type": "REPEAT",
+              "content": {
+                "type": "PATTERN",
+                "value": "[\\r?\\n]+"
+              }
             }
           ]
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "[\\r?\\n]+"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "PATTERN",
+            "value": "[\\r?\\n]+"
+          }
         }
       ]
     },
@@ -267,5 +262,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
