@@ -1,29 +1,30 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
+requires      = [ "setuptools>=62.4.0", "wheel" ]
 
 [project]
-name = "tree-sitter-git-rebase"
-description = "GitRebase grammar for tree-sitter"
-version = "0.0.1"
-keywords = ["incremental", "parsing", "tree-sitter", "git-rebase"]
+authors = [ { email = "mcarsondavis@gmail.com", name = "Michael Davis" } ]
 classifiers = [
   "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
   "Topic :: Software Development :: Compilers",
   "Topic :: Text Processing :: Linguistic",
-  "Typing :: Typed"
+  "Typing :: Typed",
 ]
-requires-python = ">=3.9"
+description = "A tree-sitter grammar for git rebase commands"
+keywords = [ "incremental", "parsing", "tree-sitter", "git-rebase" ]
 license.text = "MIT"
+name = "tree-sitter-git-rebase"
 readme = "README.md"
+requires-python = ">=3.10"
+version = "0.1.0"
 
 [project.urls]
-Homepage = "https://github.com/tree-sitter/tree-sitter-git-rebase"
+Funding  = ""
+Homepage = "https://github.com/the-mikedavis/tree-sitter-git-rebase"
 
 [project.optional-dependencies]
-core = ["tree-sitter~=0.22"]
+core = [ "tree-sitter~=0.24" ]
 
 [tool.cibuildwheel]
-build = "cp39-*"
+build          = "cp310-*"
 build-frontend = "build"

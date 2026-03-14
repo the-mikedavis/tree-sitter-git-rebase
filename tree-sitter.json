@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "git_rebase",
+      "camelcase": "GitRebase",
+      "title": "GitRebase",
+      "scope": "source.git_rebase",
+      "file-types": [
+        "git-rebase-todo"
+      ],
+      "injection-regex": "^git_rebase$",
+      "class-name": "TreeSitterGitRebase"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A tree-sitter grammar for git rebase commands",
+    "authors": [
+      {
+        "name": "Michael Davis",
+        "email": "mcarsondavis@gmail.com",
+        "url": "https://github.com/the-mikedavis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/the-mikedavis/tree-sitter-git-rebase",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}

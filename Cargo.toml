@@ -1,26 +1,27 @@
 [package]
-name = "tree-sitter-rebase"
-description = "rebase grammar for the tree-sitter parsing library"
-version = "0.0.1"
-keywords = ["incremental", "parsing", "rebase"]
-categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-rebase"
-edition = "2018"
-license = "MIT"
+authors      = [ "Michael Davis <mcarsondavis@gmail.com>" ]
+autoexamples = false
+categories   = [ "parser-implementations", "parsing", "text-editors" ]
+description  = "A tree-sitter grammar for git rebase commands"
+edition      = "2024"
+keywords     = [ "incremental", "parsing", "tree-sitter", "git-rebase" ]
+license      = "MIT"
+name         = "tree-sitter-git-rebase"
+readme       = "README.md"
+repository   = "https://github.com/the-mikedavis/tree-sitter-git-rebase"
+version      = "0.1.0"
 
-build = "bindings/rust/build.rs"
-include = [
-  "bindings/rust/*",
-  "grammar.js",
-  "queries/*",
-  "src/*",
-]
+build   = "bindings/rust/build.rs"
+include = [ "bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "/LICENSE" ]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter-language = "0.1.0"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "0.27.0"

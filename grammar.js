@@ -6,7 +6,7 @@ const ANYTHING_BUT_WHITESPACE = /\S+/;
 const WHITE_SPACE = /[\t\f\v ]+/;
 const ALPHA_HYPHEN = /[a-zA-Z-]+/;
 
-module.exports = grammar({
+export default grammar({
   name: "git_rebase",
 
   extras: ($) => [WHITE_SPACE, $.comment],

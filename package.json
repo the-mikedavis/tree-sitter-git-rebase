@@ -1,30 +1,30 @@
 {
-  "name": "tree-sitter-rebase",
-  "version": "0.0.1",
-  "description": "Tree-sitter grammar for git's interactive rebase TODO file",
-  "main": "bindings/node",
-  "types": "bindings/node",
-  "scripts": {
-    "install": "node-gyp-build",
-    "prestart": "tree-sitter build --wasm",
-    "start": "tree-sitter playground",
-    "test": "node --test bindings/node/*_test.js",
-    "format": "prettier --trailing-comma es5 --write grammar.js",
-    "format-check": "prettier --trailing-comma es5 --check grammar.js"
-  },
+  "name": "tree-sitter-git-rebase",
+  "version": "0.1.0",
+  "description": "A tree-sitter grammar for git rebase commands",
+  "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/the-mikedavis/tree-sitter-rebase.git"
+    "url": "git+https://github.com/the-mikedavis/tree-sitter-git-rebase.git"
   },
+  "funding": "",
+  "license": "MIT",
+  "author": {
+    "name": "Michael Davis",
+    "email": "mcarsondavis@gmail.com",
+    "url": "https://github.com/the-mikedavis"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
   "keywords": [
-    "parser",
-    "lexer",
-    "git",
-    "rebase",
-    "tree-sitter"
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "git_rebase"
   ],
   "files": [
     "grammar.js",
+    "tree-sitter.json",
     "binding.gyp",
     "prebuilds/**",
     "bindings/node/*",
@@ -32,35 +32,27 @@
     "src/**",
     "*.wasm"
   ],
-  "author": "the-mikedavis",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/the-mikedavis/tree-sitter-rebase/issues"
-  },
-  "homepage": "https://github.com/the-mikedavis/tree-sitter-rebase#readme",
   "dependencies": {
-    "node-addon-api": "^8.0.0",
-    "node-gyp-build": "^4.8.1"
+    "node-addon-api": "^8.5.0",
+    "node-gyp-build": "^4.8.4"
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.1",
+    "tree-sitter": "^0.25.0",
+    "tree-sitter-cli": "^0.27.0"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.21.1"
+    "tree-sitter": "^0.25.0"
   },
   "peerDependenciesMeta": {
-    "tree_sitter": {
+    "tree-sitter": {
       "optional": true
     }
   },
-  "devDependencies": {
-    "prettier": "^2.5.1",
-    "tree-sitter-cli": "^0.22.6",
-    "prebuildify": "^6.0.1"
-  },
-  "tree-sitter": [
-    {
-      "file-types": [
-        "git-rebase-todo"
-      ],
-      "highlights": "queries/highlights.scm"
-    }
-  ]
+  "scripts": {
+    "install": "node-gyp-build",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js"
+  }
 }
