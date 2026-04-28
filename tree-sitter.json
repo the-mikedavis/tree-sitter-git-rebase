@@ -25,8 +25,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/the-mikedavis/tree-sitter-git-rebase",
-      "funding": ""
+      "repository": "https://github.com/the-mikedavis/tree-sitter-git-rebase"
     }
   },
   "bindings": {
