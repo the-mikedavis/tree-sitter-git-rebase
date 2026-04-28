@@ -7,7 +7,6 @@
     "type": "git",
     "url": "git+https://github.com/the-mikedavis/tree-sitter-git-rebase.git"
   },
-  "funding": "",
   "license": "MIT",
   "author": {
     "name": "Michael Davis",

@@ -19,7 +19,6 @@ requires-python = ">=3.10"
 version = "0.1.0"
 
 [project.urls]
-Funding  = ""
 Homepage = "https://github.com/the-mikedavis/tree-sitter-git-rebase"
 
 [project.optional-dependencies]
