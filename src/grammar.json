@@ -243,7 +243,7 @@
         "value": -1,
         "content": {
           "type": "PATTERN",
-          "value": "#[^\\r\\n]*"
+          "value": "[#;][^\\r\\n]*"
         }
       }
     }
