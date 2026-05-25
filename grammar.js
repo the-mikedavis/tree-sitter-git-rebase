@@ -44,7 +44,7 @@ export default grammar({
 
     command: ($) => ALPHA_HYPHEN,
 
-    comment: ($) => token(prec(-1, /#[^\r\n]*/)),
+    comment: ($) => token(prec(-1, /[#;][^\r\n]*/)),
   },
 });
 
